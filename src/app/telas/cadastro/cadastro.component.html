@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.component.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-box register">
+            <h2>Cadastrar-se</h2>
+            <form (ngSubmit)="onSubmit()">
+                <div class="input-box">
+                    <input type="text" name="usuario_ID" [(ngModel)]="dadosNovoUsuario.usuario_ID" required>
+                    <label>Usuário</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="email_usuario" [(ngModel)]="dadosNovoUsuario.email_usuario" required>
+                    <label>Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="pw_usuario" [(ngModel)]="dadosNovoUsuario.pw_usuario" required>
+                    <label>Senha</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="div_promoter">
+                    <label>Promoter</label>
+                    <input type="checkbox" name="tp_usuario" [(ngModel)]="dadosNovoUsuario.tp_usuario">                    
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+                <div class="logreg-link">
+                    <p>Já possui uma conta? <a routerLink="/Login" class="link-login">Logar</a></p>
+                </div>
+            </form>            
+        </div>
+    </div>
+</body>
+</html>

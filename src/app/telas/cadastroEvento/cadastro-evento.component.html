@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro-evento.component.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Cadastro de Evento - Eventei</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav_bar">
+            <div class="logo">
+                <a routerLink="/orgHome">
+                 <img class="image-item" src="imagens/eventoLogod.png" alt="logo-eventei" />
+                </a>
+            </div>
+            <div class="nav_list">
+                <ul>
+                    <li class="nav_item"><a routerLink="/buscarEvento" class="nav_link">Buscar</a></li>
+                    <li class="nav_item"><a routerLink="/cadastroEvento" class="nav_link">Cadastrar</a></li>
+                    <li class="nav_item"><a routerLink="/Login" class="nav_link">Logout</a></li>
+                </ul>
+            </div>
+            <div class="mobile_menu_icon">
+                <button onclick="menuShow()"><img class="icon" src="" alt="menu"></button>
+            </div>
+        </nav>
+        <div class="mobile_menu">
+            <ul>
+                <li class="nav_item"><a href="#" class="nav_link">Inicio</a></li>
+                <li class="nav_item"><a href="#" class="nav_link">Inicio 2</a></li>
+                <li class="nav_item"><a href="#" class="nav_link">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main main_container">
+        <div class="main">
+            <form (ngSubmit)="onSubmit()">
+                <div class="cadastro_img">
+                    <button class="btn_cadastro">Selecionar Imagens</button>
+                </div>
+                <div class="main_esquerda">
+                        <label for="nm_Evento">Nome do Evento</label>
+                        <input type="text" id="nm_Evento" name="nm_Evento" [(ngModel)]="dadosNovosEventos.nm_Evento" required>
+                    
+                        <label for="dt_InicioEvento">Data de Início</label>
+                        <input type="date" id="dt_InicioEvento" name="dt_InicioEvento" [(ngModel)]="dadosNovosEventos.dt_InicioEvento" required>
+                    
+                        <label for="dt_FimEvento">Data de Término</label>
+                        <input type="date" id="dt_FimEvento" name="dt_FimEvento" [(ngModel)]="dadosNovosEventos.dt_FimEvento" required>
+                    
+                        <label for="dt_Cadastro">Data de Cadastro</label>
+                        <input type="date" id="dt_Cadastro" name="dt_Cadastro" [(ngModel)]="dadosNovosEventos.dt_Cadastro" required>      
+                        
+                        <label for="desc_evento">Descrição do Evento</label>
+                        <textarea id="desc_evento" name="desc_evento" [(ngModel)]="dadosNovosEventos.desc_evento" required></textarea>
+                </div>
+                <div class="main_direita">
+                        <label for="id_Cidade">Nome da Cidade</label>
+                        <input type="text" id="id_Cidade" name="id_Cidade" [(ngModel)]="dadosNovosEventos.id_Cidade" required>
+                    
+                        <label for="desc_endereco">Endereço</label>
+                        <input type="text" id="desc_endereco" name="desc_endereco" [(ngModel)]="dadosNovosEventos.desc_endereco" required>
+                
+                        <label for="vlr_ingresso">Valor do Ingresso</label>
+                        <input type="number" id="vlr_ingresso" name="vlr_ingresso" [(ngModel)]="dadosNovosEventos.vlr_ingresso" required>
+                
+                        <label for="status_evento">Status do Evento</label>
+                        <input type="text" id="status_evento" name="status_evento" [(ngModel)]="dadosNovosEventos.status_evento" required>
+                    
+                    
+                        <label for="idade_minima">Idade Mínima</label>
+                        <input type="number" id="idade_minima" name="idade_minima" [(ngModel)]="dadosNovosEventos.idade_minima" required>
+                </div>
+                    <button type="submit" class="btn">Cadastrar Evento</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

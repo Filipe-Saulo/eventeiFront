@@ -1,0 +1,318 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+      
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #1A1A2E;
+}
+header{
+    height: 10%;
+    width: 100%;
+    background: #0E0E1A;
+}
+main{
+    height: 90%;
+    width: 100%;
+}
+
+.nav_bar{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 1.5rem 6rem; */
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo img{
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    width: 80%;
+    height: 4rem;
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+}
+
+.nav_list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav_item{
+    margin: 1.5rem 2rem;
+}
+
+.nav_link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+/*icone em resolucoes menores*/
+.mobile_menu_icon{
+    display: none;
+}
+
+.mobile_menu{
+    display: none;
+}
+/* todos os sliders */
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    /* important serve para nao criar outros paddings  adicionais em outros dispositivos*/
+    padding: 0 !important;
+    overflow: hidden;
+    margin-bottom: 5%;
+}
+
+.slider_content{
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+.slider_content input{
+    display: none;
+}
+
+.slide_box{
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+
+.slide_box img{
+    width: 100%;
+}
+/* sliders mobile */
+.img_mobile{
+    display: none;
+}
+
+/* nav entre os slides */
+.nav_manual, .nav_auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_manual .manual_btn, .nav_auto div{
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* enquanto radio1 estiver marcado irá ocorrer no autobtn*/
+#radio1:checked ~ .nav_auto .auto_btn1, #radio2:checked ~ .nav_auto .auto_btn2, #radio3:checked ~ .nav_auto .auto_btn3 {
+    background: #000;
+}
+
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+
+.nav_manual .manual_btn:not(:last-child), .nav_auto div:not(:last-child){
+    margin-right: 10px;
+}
+.nav_manual .manual_btn:hover{
+    background: #000;
+}
+
+.container {
+    width: 100vw;
+  }
+  .card_main {
+    position: relative;
+  }
+  .card_main .slide-button {
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .card_main .slide-button:hover {
+    background: #404040;
+  }
+  .card_main .slide-button#prev-slide {
+    left: 25px;
+    display: none;
+  }
+  .card_main .slide-button#next-slide {
+    right: 10px;
+  }
+  .card_main .image-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 18px;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .card_main .image-list::-webkit-scrollbar {
+    display: none;
+  }
+  .card_main .image-list .image-item {
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+  }
+  .container .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .slider-scrollbar .scrollbar-track {
+    background: #ccc;
+    width: 100%;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+  }
+  .slider-scrollbar:hover .scrollbar-track {
+    height: 4px;
+  }
+  .slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    background: #000;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+  }
+  .slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+  }
+  .slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+  }
+  /* Styles for mobile and tablets */
+  @media only screen and (max-width: 1023px) {
+    .card_main .slide-button {
+      display: none !important;
+    }
+    .card_main .image-list {
+      gap: 10px;
+      margin-bottom: 15px;
+      scroll-snap-type: x mandatory;
+    }
+    .card_main .image-list .image-item {
+      width: 280px;
+      height: 380px;
+    }
+    .slider-scrollbar .scrollbar-thumb {
+      width: 20%;
+    }
+  }
+@media screen and (max-width:900px){
+    .img_desktop{
+        display: none;
+    }
+    .img_mobile{
+        display: block;
+    }
+    .nav_auto, .nav_manual{
+        margin-top: 60%;
+    }
+    /* abaixo serve para aumentar a margin-bottom div top 3 */
+    section.slider{
+        margin-bottom: 7%;
+    }
+}
+
+@media screen and (max-width:730px) {
+    .nav_bar{
+        padding: 1.5rem 4rem;
+    }
+    .nav_item{
+        display: none;
+    }
+    .mobile_menu_icon{
+        display: block;
+    }
+    .mobile_menu_icon button{
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile_menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile_menu .nav_item{
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .open{
+        display: block;
+    }
+        /* abaixo serve para aumentar a margin-bottom div top 3 */
+
+    section.slider{
+        margin-bottom: 10%;
+    }
+}
+@media screen and (max-width:350px) {
+        /* abaixo serve para aumentar a margin-bottom div top 3 */
+    section.slider{
+        margin-bottom: 13%;
+    }
+  
+}
